@@ -2,6 +2,12 @@
 
 echo "Welcome to Dice Program"
 
-dice=$((RANDOM%6+1))
+declare -a diceArray
 
-echo $dice
+for (( i=0; i<5; i++ ))
+do
+	dice=$((RANDOM%6+1))
+	diceArray[$i]=$dice
+done
+
+echo "Dice Values: " ${diceArray[@]}
